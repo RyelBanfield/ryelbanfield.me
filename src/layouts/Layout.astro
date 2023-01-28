@@ -1,6 +1,6 @@
 ---
-import Footer from "../components/footer.astro";
-import Nav from "../components/nav.astro";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
 
 export interface Props {
   title: string;
@@ -19,13 +19,11 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="mx-auto flex min-h-screen max-w-6xl flex-col bg-neutral-900 p-6 text-neutral-50"
+    class="mx-auto flex min-h-screen max-w-3xl flex-col bg-neutral-900 p-6 text-neutral-50"
   >
     <Nav />
-    <main class="flex-grow">
-      <div class="mt-9">
-        <slot />
-      </div>
+    <main class="mb-9 flex-grow pt-9">
+      <slot />
     </main>
     <Footer />
   </body>
