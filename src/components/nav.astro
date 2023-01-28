@@ -1,0 +1,23 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+console.log(pathname);
+
+const pages = [
+  { name: "Home", route: "/", active: pathname === "/" },
+  { name: "Portfolio", route: "/portfolio", active: pathname === "/portfolio" },
+  { name: "Blog", route: "/blog", active: pathname === "/blog" },
+];
+---
+
+<nav class="flex gap-3">
+  {
+    pages.map((page) => (
+      <a
+        href={page.route}
+        class={`text-xl font-semibold ${page.active && "text-red-900"}`}
+      >
+        {page.name}
+      </a>
+    ))
+  }
+</nav>
