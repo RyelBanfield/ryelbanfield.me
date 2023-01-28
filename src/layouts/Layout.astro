@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/footer.astro";
 import Nav from "../components/nav.astro";
 
 export interface Props {
@@ -17,8 +18,15 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="mx-auto max-w-6xl bg-neutral-900 p-6 text-neutral-50">
+  <body
+    class="mx-auto flex min-h-screen max-w-6xl flex-col bg-neutral-900 p-6 text-neutral-50"
+  >
     <Nav />
-    <slot />
+    <main class="flex-grow">
+      <div class="mt-9">
+        <slot />
+      </div>
+    </main>
+    <Footer />
   </body>
 </html>
