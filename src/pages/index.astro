@@ -1,10 +1,87 @@
 ---
+import Card from "../layouts/Card.astro";
 import Layout from "../layouts/Layout.astro";
+
+const tools = [
+  {
+    category: "Languages",
+    software: [{ name: "TypeScript", href: "https://www.typescriptlang.org" }],
+  },
+  {
+    category: "Frameworks",
+    software: [
+      { name: "Astro", href: "https://astro.build" },
+      { name: "Next.js", href: "https://nextjs.org" },
+      { name: "React Native", href: "https://reactnative.dev" },
+    ],
+  },
+  {
+    category: "CSS Frameworks",
+    software: [{ name: "TailwindCSS", href: "https://tailwindcss.com" }],
+  },
+  {
+    category: "Software Tools",
+    software: [
+      { name: "VSCode", href: "https://code.visualstudio.com" },
+      { name: "GitHub", href: "https://github.com" },
+    ],
+  },
+];
 ---
 
 <Layout title="Ryel's Portfolio & Blog">
-  <h1 class="text-3xl font-bold">Ryel Banfield</h1>
-  <h2 class="font-semibold">
-    Full Stack Developer, Entrepreneur, and Digital Nomad
-  </h2>
+  <section class="grid grid-cols-1 gap-3">
+    <Card>
+      <h1
+        class="mb-3 border-b-2 border-neutral-600 pb-3 text-3xl font-bold text-neutral-300"
+      >
+        Ryel Banfield
+      </h1>
+      <p>Software Developer, Entrepreneur, and Digital Nomad</p>
+    </Card>
+
+    <Card>
+      <h2
+        class="mb-3 border-b-2 border-neutral-600 pb-3 text-2xl font-semibold text-neutral-300"
+      >
+        Who am I?
+      </h2>
+      <p>
+        A Software Developer with 2+ years of experience and a track record of
+        building successful web and mobile applications using TypeScript and
+        React Native. With my skills and experience, I am able to solve
+        real-world problems and deliver high-quality results. I am a valuable
+        asset to any team and a professional who is passionate about technology
+        and software development.
+      </p>
+    </Card>
+
+    <Card>
+      <h2
+        class="mb-3 border-b-2 border-neutral-600 pb-3 text-2xl font-semibold text-neutral-300"
+      >
+        What do I create with?
+      </h2>
+      <div class="grid grid-cols-2 gap-6">
+        {
+          tools.map((tool) => (
+            <div>
+              <h3 class="text-xl font-semibold uppercase text-neutral-300">
+                {tool.category}
+              </h3>
+              <ul>
+                {tool.software.map((software) => (
+                  <li class="underline hover:text-red-900">
+                    <a href={software.href} target="_blank">
+                      {software.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </Card>
+  </section>
 </Layout>
