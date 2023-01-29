@@ -1,5 +1,4 @@
 ---
-import Card from "../layouts/Card.astro";
 import Layout from "../layouts/Layout.astro";
 
 const tools = [
@@ -30,22 +29,14 @@ const tools = [
 ---
 
 <Layout title="Ryel's Portfolio & Blog">
-  <section class="grid grid-cols-1 gap-3">
-    <Card>
-      <h1
-        class="mb-3 border-b-2 border-neutral-600 pb-3 text-3xl font-bold text-neutral-300"
-      >
-        Ryel Banfield
-      </h1>
-      <p>Software Developer, Entrepreneur, and Digital Nomad</p>
-    </Card>
+  <section class="grid grid-cols-1 gap-6">
+    <div class="border-b-2 border-red-600 pb-6">
+      <h1 class="mb-3 text-3xl font-bold text-neutral-300">Ryel Banfield</h1>
+      <p>Software Developer, Entrepreneur, Digital Nomad.</p>
+    </div>
 
-    <Card>
-      <h2
-        class="mb-3 border-b-2 border-neutral-600 pb-3 text-2xl font-semibold text-neutral-300"
-      >
-        Who am I?
-      </h2>
+    <div class="border-b-2 border-red-600 pb-6">
+      <h2 class="mb-3 text-2xl font-semibold text-neutral-300">Who am I?</h2>
       <p>
         A Software Developer with 2+ years of experience and a track record of
         building successful web and mobile applications. With my skills and
@@ -54,12 +45,10 @@ const tools = [
         professional who is passionate about technology and software
         development.
       </p>
-    </Card>
+    </div>
 
-    <Card>
-      <h2
-        class="mb-3 border-b-2 border-neutral-600 pb-3 text-2xl font-semibold text-neutral-300"
-      >
+    <div class="border-b-2 border-red-600 pb-6">
+      <h2 class="mb-3 text-2xl font-semibold text-neutral-300">
         What do I create with?
       </h2>
       <div class="grid grid-cols-2 gap-6">
@@ -71,8 +60,8 @@ const tools = [
               </h3>
               <ul>
                 {tool.software.map((software) => (
-                  <li class="underline hover:text-red-900">
-                    <a href={software.href} target="_blank">
+                  <li class="underline hover:text-red-600">
+                    <a href={software.href} target="_blank" class="text-lg">
                       {software.name}
                     </a>
                   </li>
@@ -82,6 +71,6 @@ const tools = [
           ))
         }
       </div>
-    </Card>
+    </div>
   </section>
 </Layout>
