@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Section from "../layouts/Section.astro";
+import { Image } from "@astrojs/image/components";
 
 const tools = [
   {
@@ -29,10 +30,10 @@ const tools = [
 ];
 
 const hobbies = [
-  { name: "Coding", image: "./Coding.webp" },
-  { name: "Formula 1", image: "./Formula-1.webp" },
-  { name: "Video Games", image: "./Video-Games.webp" },
-  { name: "Travel", image: "./Travel.webp" },
+  { name: "Coding", image: "/images/Coding.webp" },
+  { name: "Formula 1", image: "/images/Formula-1.webp" },
+  { name: "Video Games", image: "/images/Video-Games.webp" },
+  { name: "Travel", image: "/images/Travel.webp" },
 ];
 ---
 
@@ -92,7 +93,7 @@ const hobbies = [
               <h3 class="text-xl font-semibold uppercase text-neutral-300">
                 {hobby.name}
               </h3>
-              <img src={hobby.image} />
+              <Image src={hobby.image} alt="" width={600} height={370} />
             </div>
           ))
         }
