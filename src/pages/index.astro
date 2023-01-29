@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Section from "../layouts/Section.astro";
 
 const tools = [
   {
@@ -26,16 +27,23 @@ const tools = [
     ],
   },
 ];
+
+const hobbies = [
+  { name: "Coding", image: "./Coding.webp" },
+  { name: "Formula 1", image: "./Formula-1.webp" },
+  { name: "Video Games", image: "./Video-Games.webp" },
+  { name: "Travel", image: "./Travel.webp" },
+];
 ---
 
 <Layout title="Ryel's Portfolio & Blog">
-  <section class="grid grid-cols-1 gap-6">
-    <div class="border-b-2 border-red-600 pb-6">
+  <div class="grid grid-cols-1 gap-6">
+    <Section>
       <h1 class="mb-3 text-3xl font-bold text-neutral-300">Ryel Banfield</h1>
       <p>Software Developer, Entrepreneur, Digital Nomad.</p>
-    </div>
+    </Section>
 
-    <div class="border-b-2 border-red-600 pb-6">
+    <Section>
       <h2 class="mb-3 text-2xl font-semibold text-neutral-300">Who am I?</h2>
       <p>
         A Software Developer with 2+ years of experience and a track record of
@@ -45,9 +53,9 @@ const tools = [
         professional who is passionate about technology and software
         development.
       </p>
-    </div>
+    </Section>
 
-    <div class="border-b-2 border-red-600 pb-6">
+    <Section>
       <h2 class="mb-3 text-2xl font-semibold text-neutral-300">
         What do I create with?
       </h2>
@@ -71,6 +79,24 @@ const tools = [
           ))
         }
       </div>
-    </div>
-  </section>
+    </Section>
+
+    <Section>
+      <h2 class="mb-3 text-2xl font-semibold text-neutral-300">
+        What do I enjoy?
+      </h2>
+      <div class="grid grid-cols-2 gap-6">
+        {
+          hobbies.map((hobby) => (
+            <div>
+              <h3 class="text-xl font-semibold uppercase text-neutral-300">
+                {hobby.name}
+              </h3>
+              <img src={hobby.image} />
+            </div>
+          ))
+        }
+      </div>
+    </Section>
+  </div>
 </Layout>
