@@ -2,6 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Section from "../layouts/Section.astro";
 import { Image } from "@astrojs/image/components";
+import CodingImage from "../images/Coding.webp";
+import F1Image from "../images/Formula-1.webp";
+import GamingImage from "../images/Video-Games.webp";
+import TravelImage from "../images/Travel.webp";
 
 const tools = [
   {
@@ -30,10 +34,10 @@ const tools = [
 ];
 
 const hobbies = [
-  { name: "Coding", image: "/images/Coding.webp" },
-  { name: "Formula 1", image: "/images/Formula-1.webp" },
-  { name: "Video Games", image: "/images/Video-Games.webp" },
-  { name: "Travel", image: "/images/Travel.webp" },
+  { name: "Coding", image: CodingImage },
+  { name: "Formula 1", image: F1Image },
+  { name: "Video Games", image: GamingImage },
+  { name: "Travel", image: TravelImage },
 ];
 ---
 
@@ -90,10 +94,16 @@ const hobbies = [
         {
           hobbies.map((hobby) => (
             <div>
-              <h3 class="text-xl font-semibold uppercase text-neutral-300">
+              <h3 class="mb-3 text-xl font-semibold uppercase text-neutral-300">
                 {hobby.name}
               </h3>
-              <Image src={hobby.image} alt="" width={600} height={370} />
+              <Image
+                src={hobby.image}
+                alt=""
+                width={600}
+                height={370}
+                quality={20}
+              />
             </div>
           ))
         }
