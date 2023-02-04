@@ -17,7 +17,7 @@ const pages = [
     pages.map((page) => (
       <a
         href={page.route}
-        class={`text-xl font-semibold ${
+        class={`text-xl font-semibold transition-all hover:animate-pulse ${
           page.active &&
           "bg-gradient-to-b from-red-900 to-red-600 bg-clip-text text-transparent"
         }`}
