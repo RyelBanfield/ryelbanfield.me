@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export const getStaticPaths = async () => {
+  const pages = [
+    {
+      slug: "qlink",
+      name: "QLink",
+      description:
+        "A QR Code Generator & Link Host. Users able to create an account and purchase credits through Stripe. Once their credits have been saved to their account, the user is then able to use that credit to generate a QR Code with an image of their choice at the center. Users are also able to create their own QLink Website or Link Host. By selecting a theme and then entering the links you want to be hosted, users can generate their own website which comes with its own QR Code to allow it to be shared easily.",
+      githubRepository: "https://github.com/RyelBanfield/qlink",
+      liveLink: "https://qlink.tech",
+    },
+    {
+      slug: "view-finder",
+      name: "View Finder",
+      description: "",
+      githubRepository: "https://github.com/RyelBanfield/viewfinder-web",
+      liveLink: "https://viewfinder-web.vercel.app",
+    },
+  ];
+
+  return pages.map(
+    ({ slug, name, description, githubRepository, liveLink }) => {
+      return {
+        params: { slug },
+        props: { name, description, githubRepository, liveLink },
+      };
+    }
+  );
+};
+
+const { name, description, githubRepository, liveLink } = Astro.props;
+---
+
+<Layout title={`Ryel's Portfolio | ${name}`}>
+  <div>
+    <h1>{name}</h1>
+    <p>{description}</p>
+    <a href={githubRepository} target="_blank">GitHub Repository</a>
+    <a href={liveLink} target="_blank">Live Link</a>
+  </div>
+</Layout>
