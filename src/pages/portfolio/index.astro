@@ -1,14 +1,37 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 import Layout from "../../layouts/Layout.astro";
+
+import QLinkScreenshot from "../../images/screenshots/qlink/QLink-3.png";
+import ViewFinderScreenshot from "../../images/screenshots/view-finder/ViewFinder-3.png";
+import StoryAnalyticsScreenshot from "../../images/screenshots/story-analytics/StoryAnalytics-1.png";
+import F1RacingNowScreenShot from "../../images/screenshots/f1-racing-now/F1RacingNow-1.png";
 
 const projects = [
   {
-    name: "QLink",
     slug: "qlink",
+    name: "QLink",
+    description: "QR Code Generator & Link Host",
+    screenshot: QLinkScreenshot,
   },
   {
-    name: "View Finder",
     slug: "view-finder",
+    name: "View Finder",
+    description: "Event Image Sharing Platform",
+    screenshot: ViewFinderScreenshot,
+  },
+  {
+    slug: "story-analytics",
+    name: "Story Analytics",
+    description: "TBD",
+    screenshot: StoryAnalyticsScreenshot,
+  },
+  {
+    slug: "f1-racing-now",
+    name: "F1 Racing Now",
+    description: "Current F1 Season Points & Schedule",
+    screenshot: F1RacingNowScreenShot,
   },
 ];
 ---
@@ -17,9 +40,39 @@ const projects = [
   <div class="grid grid-cols-1 gap-6">
     {
       projects.map((project) => (
-        <div>
-          <a href={`/portfolio/${project.slug}`}>{project.name}</a>
-        </div>
+        <a
+          href={`/portfolio/${project.slug}`}
+          class="rounded bg-neutral-100 p-3 text-neutral-900"
+        >
+          <div class="flex justify-between">
+            <h3 class="text-xl font-semibold">{project.name}</h3>
+            <div class="flex gap-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-6 w-6 font-medium text-red-900"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                />
+              </svg>
+              <p class="font-medium text-red-900">In Development</p>
+            </div>
+          </div>
+
+          <p>{project.description}</p>
+
+          <Image
+            src={project.screenshot}
+            alt={`Screenshot of ${project.name}`}
+            quality={10}
+          />
+        </a>
       ))
     }
   </div>
