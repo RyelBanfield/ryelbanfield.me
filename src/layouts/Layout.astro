@@ -1,5 +1,4 @@
 ---
-import Screenshot from "../images/Screenshot.png";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
@@ -32,7 +31,7 @@ const { title } = Astro.props;
       property="og:description"
       content="Software Developer, Entrepreneur, Digital Nomad. 2+ years of experience and a track record of building successful web and mobile applications."
     />
-    <meta property="og:image" content={Screenshot as unknown as string} />
+    <meta property="og:image" content="../images/Screenshot.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -42,7 +41,7 @@ const { title } = Astro.props;
       property="twitter:description"
       content="Software Developer, Entrepreneur, Digital Nomad. 2+ years of experience and a track record of building successful web and mobile applications."
     />
-    <meta property="twitter:image" content={Screenshot as unknown as string} />
+    <meta property="twitter:image" content="../images/Screenshot.png" />
 
     <title>{title}</title>
   </head>
