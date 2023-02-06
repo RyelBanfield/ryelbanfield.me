@@ -3,67 +3,7 @@ import { Image } from "@astrojs/image/components";
 
 import Layout from "../../layouts/Layout.astro";
 
-import QLinkScreenshot from "../../images/screenshots/qlink/QLink-3.png";
-import ViewFinderScreenshot from "../../images/screenshots/view-finder/ViewFinder-3.png";
-import StoryAnalyticsScreenshot from "../../images/screenshots/story-analytics/StoryAnalytics-1.png";
-import F1RacingNowScreenShot from "../../images/screenshots/f1-racing-now/F1RacingNow-1.png";
-
-const projects = [
-  {
-    slug: "qlink",
-    development: true,
-    name: "QLink",
-    description: "QR Code Generator & Link Host",
-    screenshot: QLinkScreenshot,
-    stack: [
-      "TypeScript",
-      "Next.js",
-      "TailwindCSS",
-      "Prisma",
-      "NextAuth",
-      "Stripe",
-      "Vercel",
-    ],
-  },
-  {
-    slug: "view-finder",
-    development: true,
-    name: "View Finder",
-    description: "Event Image Sharing Platform",
-    screenshot: ViewFinderScreenshot,
-    stack: [
-      "TypeScript",
-      "Next.js",
-      "TailwindCSS",
-      "React Native",
-      "Firebase",
-      "Vercel",
-    ],
-  },
-  {
-    slug: "story-analytics",
-    development: true,
-    name: "Story Analytics",
-    description: "-",
-    screenshot: StoryAnalyticsScreenshot,
-    stack: [
-      "TypeScript",
-      "Next.js",
-      "TailwindCSS",
-      "Prisma",
-      "NextAuth",
-      "Vercel",
-    ],
-  },
-  {
-    slug: "f1-racing-now",
-    development: false,
-    name: "F1 Racing Now",
-    description: "Current F1 Season Points & Schedule",
-    screenshot: F1RacingNowScreenShot,
-    stack: ["React Native", "Vercel"],
-  },
-];
+import { projects } from "../../projects";
 ---
 
 <Layout title="Ryel's Portfolio">
@@ -78,6 +18,7 @@ const projects = [
             <h3 class="bg-gradient-to-b from-red-900 to-red-600 bg-clip-text text-xl font-semibold text-transparent">
               {project.name}
             </h3>
+
             {project.development === true ? (
               <p class="text-sm font-medium text-red-800">Active Development</p>
             ) : (
@@ -87,10 +28,10 @@ const projects = [
             )}
           </div>
 
-          <p>{project.description}</p>
+          <p>{project.shortDescription}</p>
 
           <Image
-            src={project.screenshot}
+            src={project.preview}
             alt={`Screenshot of ${project.name}`}
             quality={10}
           />
