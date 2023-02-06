@@ -1,43 +1,189 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 import Layout from "../../layouts/Layout.astro";
 
+import { projects } from "../../projects";
+
 export const getStaticPaths = async () => {
-  const pages = [
-    {
-      slug: "qlink",
-      name: "QLink",
-      description:
-        "A QR Code Generator & Link Host. Users able to create an account and purchase credits through Stripe. Once their credits have been saved to their account, the user is then able to use that credit to generate a QR Code with an image of their choice at the center. Users are also able to create their own QLink Website or Link Host. By selecting a theme and then entering the links you want to be hosted, users can generate their own website which comes with its own QR Code to allow it to be shared easily.",
-      githubRepository: "https://github.com/RyelBanfield/qlink",
-      liveLink: "https://qlink.tech",
-    },
-    {
-      slug: "view-finder",
-      name: "View Finder",
-      description: "",
-      githubRepository: "https://github.com/RyelBanfield/viewfinder-web",
-      liveLink: "https://viewfinder-web.vercel.app",
-    },
-  ];
+  const pages = [...projects];
 
   return pages.map(
-    ({ slug, name, description, githubRepository, liveLink }) => {
+    ({
+      slug,
+      development,
+      name,
+      longDescription,
+      stack,
+      screenshots,
+      githubRepository,
+      liveLink,
+    }) => {
       return {
         params: { slug },
-        props: { name, description, githubRepository, liveLink },
+        props: {
+          development,
+          name,
+          longDescription,
+          stack,
+          screenshots,
+          githubRepository,
+          liveLink,
+        },
       };
     }
   );
 };
 
-const { name, description, githubRepository, liveLink } = Astro.props;
+const {
+  development,
+  name,
+  longDescription,
+  stack,
+  screenshots,
+  githubRepository,
+  liveLink,
+} = Astro.props as {
+  development: boolean;
+  name: string;
+  longDescription: string;
+  stack: string[];
+  screenshots: ImageMetadata[];
+  githubRepository: string;
+  liveLink: string;
+};
 ---
 
 <Layout title={`Ryel's Portfolio | ${name}`}>
-  <div>
-    <h1>{name}</h1>
-    <p>{description}</p>
-    <a href={githubRepository} target="_blank">GitHub Repository</a>
-    <a href={liveLink} target="_blank">Live Link</a>
+  <div class="flex flex-col gap-6 rounded bg-neutral-100 p-3 text-neutral-900">
+    <div class="flex justify-between">
+      <h3
+        class="bg-gradient-to-b from-red-900 to-red-600 bg-clip-text text-xl font-semibold text-transparent"
+      >
+        {name}
+      </h3>
+
+      {
+        development === true ? (
+          <p class="text-sm font-medium text-red-800">Active Development</p>
+        ) : (
+          <p class="text-sm font-medium text-green-800">
+            No Active Development
+          </p>
+        )
+      }
+    </div>
+
+    <div>
+      <p>{longDescription}</p>
+    </div>
+
+    <section id="content-box">
+      {
+        screenshots.map((screenshot) => (
+          <Image src={screenshot} alt={`Screenshot of ${name}`} quality={10} />
+        ))
+      }
+    </section>
+
+    <div class="flex gap-3">
+      <a
+        href={githubRepository}
+        target="_blank"
+        class="underline hover:text-red-600">GitHub Repository</a
+      >
+      <a href={liveLink} target="_blank" class="underline hover:text-red-600"
+        >Live Link</a
+      >
+    </div>
+
+    <div class="divider"></div>
+
+    <ul class="flex flex-wrap gap-3">
+      {stack.map((tech) => <li class="text-center text-xs">{tech}</li>)}
+    </ul>
   </div>
 </Layout>
+
+<script>
+  import { BoxSlider, FadeSlider } from "@boxslider/slider";
+
+  const options = {
+    effect: new FadeSlider(),
+    autoScroll: true,
+    timeout: 1250,
+  };
+
+  const box = document.querySelector("#content-box") as HTMLElement;
+
+  // Create a fading slide transition that moves to the next slide every 5 seconds (5000ms)
+  const slider = new BoxSlider(box, options);
+
+  // Call API methods on the slider to manipulate it see documentation for available actions
+  slider.next().then(() => {
+    //   // Promise resolves when the box has transitioned to the next slide
+  });
+</script>
+
+<style>
+  .divider {
+    width: 100%;
+    height: 2px;
+    background: -webkit-linear-gradient(left, red, black);
+    background: -moz-linear-gradient(left, red, black, red, black, red);
+    background: -o-linear-gradient(left, red, black, red, black, red);
+    background: -ms-linear-gradient(left, red, black, red, black, red);
+    background: linear-gradient(to right, red, black, red, black, red);
+    background-repeat: repeat-x;
+
+    -webkit-animation: go 20s linear infinite;
+    -moz-animation: go 20s linear infinite;
+    -o-animation: go 20s linear infinite;
+    -ms-animation: go 20s linear infinite;
+    animation: go 20s linear infinite;
+  }
+
+  @-webkit-keyframes go {
+    0% {
+      background-position: 0;
+    }
+    100% {
+      background-position: 6000px 0;
+    }
+  }
+  @-moz-keyframes go {
+    0% {
+      background-position: 0;
+    }
+    50% {
+      background-position: 400px 0;
+    }
+    100% {
+      background-position: 6000px 0;
+    }
+  }
+  @-o-keyframes go {
+    0% {
+      background-position: 0;
+    }
+    100% {
+      background-position: 6000px 0;
+    }
+  }
+  @-ms-keyframes go {
+    0% {
+      background-position: 0;
+    }
+    100% {
+      background-position: 6000px 0;
+    }
+  }
+  @keyframes go {
+    0% {
+      background-position: 0;
+    }
+    100% {
+      background-position: 6000px 0;
+    }
+  }
+</style>
