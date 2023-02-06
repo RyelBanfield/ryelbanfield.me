@@ -27,7 +27,7 @@ export const projects = [
     name: "QLink",
     shortDescription: "QR Code Generator & Link Host",
     longDescription:
-      "A QR Code Generator & Link Host. Users able to create an account and purchase credits through Stripe. Once their credits have been saved to their account, the user is then able to use that credit to generate a QR Code with an image of their choice at the center. Users are also able to create their own QLink Website or Link Host. By selecting a theme and then entering the links you want to be hosted, users can generate their own website which comes with its own QR Code to allow it to be shared easily.",
+      "A platform for generating QR codes and hosting links. Users can create an account and buy credits via Stripe. With the saved credits, they can generate a custom QR code by placing an image at the center. They can also create their QLink website or link host. By selecting a theme and adding desired links, users can generate their own website complete with a shareable QR code.",
     preview: QLinkPreview,
     stack: [
       "TypeScript",
@@ -47,7 +47,8 @@ export const projects = [
     slug: "view-finder",
     name: "View Finder",
     shortDescription: "Event Image Sharing Platform",
-    longDescription: "",
+    longDescription:
+      "An event image sharing platform allowing photographers to securely and easily upload and share their event photos with attendees in one place. The platform will offer user management, customizable galleries, image downloads, a user-friendly interface, and affordable pricing, making it a convenient and accessible solution for photographers and attendees alike. The platform is powered by Firebase for its backend and is available as both a web app built with Next.js and a React Native app.",
     preview: ViewFinderPreview,
     stack: [
       "TypeScript",
@@ -66,7 +67,7 @@ export const projects = [
     slug: "story-analytics",
     name: "Story Analytics",
     shortDescription: "-",
-    longDescription: "",
+    longDescription: "The scope of this project is being reconsidered.",
     preview: StoryAnalyticsPreview,
     stack: [
       "TypeScript",
@@ -85,7 +86,8 @@ export const projects = [
     slug: "f1-racing-now",
     name: "F1 Racing Now",
     shortDescription: "Current F1 Season Points & Schedule",
-    longDescription: "",
+    longDescription:
+      "A platform that keeps users up-to-date on the current F1 season. The app allows users to view the date and countdown of the next race, the schedule for the entire year, the points score of the last race, and the total points for each driver and team. The app provides comprehensive and real-time information on the F1 season, making it a must-have for F1 fans.",
     preview: F1RacingNowPreview,
     stack: ["React Native", "Vercel"],
     screenshots: [F1RacingNow_1, F1RacingNow_2, F1RacingNow_3, F1RacingNow_4],
