@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "../../layouts/Layout.astro";
+
+const posts = await getCollection("blog", (post) => {
+  return import.meta.env.MODE !== "production" || post.data.isDraft === false;
+});
+---
+
+<Layout title="Ryel's Blog">
+  <div class="grid grid-cols-1 gap-6">
+    {
+      posts.length === 0 && (
+        <p class="text-center text-neutral-500">
+          No posts yet. Check back later!
+        </p>
+      )
+    }
+
+    {
+      posts.map((post) => {
+        return (
+          <a
+            href={`/blog/${post.slug}`}
+            class="rounded bg-neutral-100 p-3 text-neutral-900"
+          >
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+          </a>
+        );
+      })
+    }
+  </div>
+</Layout>
