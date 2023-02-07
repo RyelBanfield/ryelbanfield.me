@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "@astrojs/image/components";
 
 import Layout from "../../layouts/Layout.astro";
 
@@ -25,11 +26,93 @@ const posts = await getCollection("blog", (post) => {
             href={`/blog/${post.slug}`}
             class="rounded bg-neutral-100 p-3 text-neutral-900"
           >
-            <h2>{post.data.title}</h2>
-            <p>{post.data.description}</p>
+            <h1 class="bg-gradient-to-b from-red-900 to-red-600 bg-clip-text text-xl font-semibold text-transparent">
+              {post.data.title}
+            </h1>
+
+            <p class="mb-3">{post.data.description}</p>
+
+            <Image
+              src={post.data.image}
+              alt={`Image for ${post.data.title}`}
+              width={1920}
+              height={1080}
+              class="mb-6 rounded"
+            />
+
+            <div class="divider mb-3" />
+
+            <ul class="flex flex-wrap gap-3">
+              {post.data.tags.map((tag) => (
+                <li class="text-center text-xs">{tag}</li>
+              ))}
+            </ul>
           </a>
         );
       })
     }
   </div>
 </Layout>
+
+<style>
+  .divider {
+    width: 100%;
+    height: 2px;
+    background: -webkit-linear-gradient(left, red, black);
+    background: -moz-linear-gradient(left, red, black, red, black, red);
+    background: -o-linear-gradient(left, red, black, red, black, red);
+    background: -ms-linear-gradient(left, red, black, red, black, red);
+    background: linear-gradient(to right, red, black, red, black, red);
+    background-repeat: repeat-x;
+
+    -webkit-animation: go 20s linear infinite;
+    -moz-animation: go 20s linear infinite;
+    -o-animation: go 20s linear infinite;
+    -ms-animation: go 20s linear infinite;
+    animation: go 20s linear infinite;
+  }
+
+  @-webkit-keyframes go {
+    0% {
+      background-position: 0;
+    }
+    100% {
+      background-position: 6000px 0;
+    }
+  }
+  @-moz-keyframes go {
+    0% {
+      background-position: 0;
+    }
+    50% {
+      background-position: 400px 0;
+    }
+    100% {
+      background-position: 6000px 0;
+    }
+  }
+  @-o-keyframes go {
+    0% {
+      background-position: 0;
+    }
+    100% {
+      background-position: 6000px 0;
+    }
+  }
+  @-ms-keyframes go {
+    0% {
+      background-position: 0;
+    }
+    100% {
+      background-position: 6000px 0;
+    }
+  }
+  @keyframes go {
+    0% {
+      background-position: 0;
+    }
+    100% {
+      background-position: 6000px 0;
+    }
+  }
+</style>
