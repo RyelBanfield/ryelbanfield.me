@@ -35,7 +35,7 @@ const { title, image, description } = Astro.props;
       content={description ||
         "Full Stack Developer, Entrepreneur, Digital Nomad. 2+ years of experience and a track record of building successful web and mobile applications."}
     />
-    <meta property="og:image" content={image || "./Screenshot.png"} />
+    <meta property="og:image" content={image || "/Screenshot.png"} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -46,7 +46,7 @@ const { title, image, description } = Astro.props;
       content={description ||
         "Full Stack Developer, Entrepreneur, Digital Nomad. 2+ years of experience and a track record of building successful web and mobile applications."}
     />
-    <meta property="twitter:image" content={image || "./Screenshot.png"} />
+    <meta property="twitter:image" content={image || "/Screenshot.png"} />
 
     <title>{title}</title>
   </head>
