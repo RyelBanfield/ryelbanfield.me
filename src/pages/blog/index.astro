@@ -23,6 +23,7 @@ const posts = await getCollection("blog", (post) => {
       posts.map((post) => {
         return (
           <a
+            rel="prefetch"
             href={`/blog/${post.slug}`}
             class="rounded bg-neutral-100 p-3 text-neutral-900"
           >
