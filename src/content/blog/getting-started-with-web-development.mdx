@@ -1,0 +1,105 @@
+---
+isDraft: true
+title: "Web Development - Overview and Getting Started"
+description: "In this overview, I'll walk you through the basics of web development, including the programming languages and tools used, and also how to get started today. This is meant as a beginner-friendly guide and will give you a solid understanding of the web development process."
+image: "/blog-images/post-2.jpg"
+tags: [Beginner, Web Development, HTML, CSS, JavaScript]
+---
+
+import Video from "../../components/Video.astro";
+
+## This post is a draft and is not yet complete.
+
+In this blog post, I'll provide a clear outline and description of some of the tools used in web development (also mobile development 👀) and how to get started today. This is meant as a beginner-friendly guide and will give you a solid understanding of the web development process.
+
+### Table of Contents:
+
+- [Get Started](#get-started)
+- [HTML](#html)
+- [CSS](#css)
+- [JavaScript](#javascript)
+- [TypeScript](#typescript)
+- [React](#react)
+- [Node.js](#node.js)
+- [Next.js](#next.js)
+
+## Get Started
+
+The first step in web development is to install [Node.js](https://nodejs.org/en/), which is a tool used to run [JavaScript](https://www.w3schools.com/js/) code outside of a web browser. It's like a special engine that makes your code work on the computer. It's free and can be used on any computer. This will allow you to write and run code that powers web applications and websites. I recommend using [NVM](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/) for this as it allows you to easily install and switch between different versions of Node.js. (Just trust me on this one.)
+
+Once you have Node.js installed, you can install [Visual Studio Code](https://code.visualstudio.com/). Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS that helps you write and edit your code. It has lots of useful features like highlighting important parts of your code, finding errors, and making it easier to write new code. It's easy to use and has a simple interface that shows you all the files and folders you're working on. With Visual Studio Code, you can write better code and create awesome web apps and websites!
+
+Now that you have Node.js and Visual Studio Code installed, you can start coding.
+
+This is not a deep tutorial on how to code, but I'll give you a quick overview of the basics of web development. If you want to learn more about web development, I recommend checking out [W3Schools](https://www.w3schools.com/), [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web) or [FreeCodeCamp](https://www.freecodecamp.org/).
+
+## HTML
+
+HTML stands for **H**yper**t**ext **M**arkup **L**anguage. It is the standard markup language for creating web pages and web applications. HTML is the structure of the website (like your skeleton). It is the foundation of the website and is used to define the content, structure, and layout of a website. HTML is the most basic building block of the web and is used to create web pages and web applications.
+
+Here is an example of a HTML page:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first HTML page</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <button>Button clicked <span id="clicks">0</span> times.</button>
+  </body>
+</html>
+```
+
+This HTML page contains a heading, a button, and a span element. The span element is used to display the number of times the button has been clicked. We now have a basic website, but it doesn't look very good. We need to use CSS to make it look better.
+
+## CSS
+
+CSS stands for **C**ascading **S**tyle **S**heets. It is a style sheet language used for describing the presentation of a document written in HTML. CSS is used to style the website (like your skin, hair and face?). It is used to control the layout of multiple web pages all at once. It can be used to define text styles, table sizes, and other aspects of web pages that previously could only be defined in a page's HTML.
+
+Here is an example of a CSS stylesheet:
+
+```css
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+button {
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+```
+
+This CSS stylesheet contains three rules. The first rule sets the background color of the body element to light blue. The second rule sets the color of the h1 element to white and the text alignment to center. The third rule sets the background color of the button element to green, the color of the text to white, and the text alignment to center. Now that we have a basic website with some styling, we need to add some JavaScript to make it interactive.
+
+## JavaScript
+
+JavaScript is a popular programming language that is mainly used to make web pages more interactive (like your brain) and engaging for users. It allows developers to create all kinds of interactive features, such as animations, dynamic forms, and games. In addition to its use on the web, JavaScript is also used in server-side development, desktop applications, and mobile app development. It's a versatile and powerful language that has become an essential part of web development, making it a must-know language for developers.
+
+Here is an example of a JavaScript script:
+
+```js
+// Select the button element from the HTML and store it in a variable.
+const button = document.querySelector("button");
+
+// Create a variable to keep track of the number of clicks.
+let clicks = 0;
+
+// Add an event listener to the button. Everything inside the { } will run every time the button is clicked.
+button.addEventListener("click", () => {
+  // Increment the number of clicks.
+  clicks += 1;
+
+  // Update the text of the button to show the number of clicks.
+  document.querySelector("#clicks").textContent = clicks;
+});
+```
+
+This JavaScript script contains three variables. The first variable is a reference to the button element in the HTML. The second variable is used to keep track of the number of times the button has been clicked. The third variable is a reference to the span element in the HTML. This script contains one event listener. The event listener is added to the button element and will run every time the button is clicked. When the button is clicked, the number of clicks is incremented by one and the text of the span element is updated to show the number of clicks. Now we have a basic website with some styling and interactivity.
