@@ -4,6 +4,11 @@ import { Image } from "@astrojs/image/components";
 import Layout from "../layouts/Layout.astro";
 import Section from "../layouts/Section.astro";
 
+import CodingImage from "../images/Coding.webp";
+import F1Image from "../images/Formula-1.webp";
+import GamingImage from "../images/Video-Games.webp";
+import TravelImage from "../images/Travel.webp";
+
 const tools = [
   {
     category: "Languages",
@@ -31,10 +36,10 @@ const tools = [
 ];
 
 const hobbies = [
-  { name: "Coding", imageSrc: '/home-page/Coding.webp' },
-  { name: "Formula 1", imageSrc: '/home-page/Formula-1.webp' },
-  { name: "Video Games", imageSrc: '/home-page/Video-Games.webp' },
-  { name: "Travel", imageSrc: '/home-page/Travel.webp' },
+  { name: "Coding", image: CodingImage },
+  { name: "Formula 1", image: F1Image },
+  { name: "Video Games", image: GamingImage },
+  { name: "Travel", image: TravelImage },
 ];
 ---
 
@@ -115,8 +120,8 @@ const hobbies = [
                 {hobby.name}
               </h3>
               <Image
-                src={hobby.imageSrc}
-                alt="Image of Hobby"
+                src={hobby.image}
+                alt=""
                 width={600}
                 height={370}
                 quality={20}
