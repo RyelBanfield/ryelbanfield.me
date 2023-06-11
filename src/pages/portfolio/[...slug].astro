@@ -11,7 +11,6 @@ export const getStaticPaths = async () => {
   return pages.map(
     ({
       slug,
-      development,
       name,
       longDescription,
       stack,
@@ -22,7 +21,6 @@ export const getStaticPaths = async () => {
       return {
         params: { slug },
         props: {
-          development,
           name,
           longDescription,
           stack,
@@ -63,7 +61,12 @@ const {
     <section id="content-box" class="mb-3">
       {
         screenshots.map((screenshot) => (
-          <Image src={screenshot} alt={`Screenshot of ${name}`} quality={10} />
+          <Image
+            src={screenshot}
+            alt={`Screenshot of ${name}`}
+            quality={10}
+            class="aspect-video"
+          />
         ))
       }
     </section>
