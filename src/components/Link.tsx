@@ -9,7 +9,7 @@ const Link = ({ to, text }: LinkProps) => {
       href={to}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-red-500 hover:text-red-600"
+      className="text-slate-600 hover:text-slate-300"
     >
       {text}
     </a>

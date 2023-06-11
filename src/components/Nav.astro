@@ -12,15 +12,14 @@ const pages = [
 ];
 ---
 
-<nav class="flex gap-3">
+<nav class="flex gap-3 mb-12">
   {
     pages.map((page) => (
       <a
         rel="prefetch"
         href={page.route}
-        class={`text-xl font-semibold transition-all hover:animate-pulse ${
-          page.active &&
-          "bg-gradient-to-b from-red-900 to-red-600 bg-clip-text text-transparent"
+        class={`text-lg font-semibold transition-all hover:animate-pulse ${
+          page.active && "text-neutral-400"
         }`}
       >
         {page.name}
