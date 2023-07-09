@@ -3,11 +3,11 @@ const pathname = new URL(Astro.request.url).pathname;
 
 const pages = [
   { name: "Home", route: "/", active: pathname === "/" },
-  {
-    name: "Portfolio",
-    route: "/portfolio",
-    active: pathname.includes("/portfolio"),
-  },
+  // {
+  //   name: "Portfolio",
+  //   route: "/portfolio",
+  //   active: pathname.includes("/portfolio"),
+  // },
   { name: "Blog", route: "/blog", active: pathname.includes("/blog") },
 ];
 ---
