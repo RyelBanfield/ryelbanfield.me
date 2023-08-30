@@ -86,7 +86,7 @@ const hobbies = [
               <h3 class="text-lg font-medium uppercase text-neutral-400">
                 {tool.category}
               </h3>
-              <ul>
+              <ul class="flex flex-col gap-2">
                 {tool.software.map((software) => (
                   <li class="underline hover:text-neutral-400">
                     <a href={software.href} target="_blank" class="text-lg">
