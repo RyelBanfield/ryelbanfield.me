@@ -32,7 +32,10 @@ const { Content } = await post.render();
   description={post.data.description}
 >
   <div>
-    <h1 class="mb-6 text-2xl font-semibold text-neutral-300">
+    <h1
+      transition:name={`title-${post.slug}`}
+      class="mb-6 text-2xl font-semibold text-neutral-300"
+    >
       {post.data.title}
     </h1>
 
@@ -42,6 +45,7 @@ const { Content } = await post.render();
       width={1920}
       height={1080}
       class="mb-6 rounded"
+      transition:name={`image-${post.slug}`}
     />
   </div>
 
