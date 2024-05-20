@@ -1,22 +1,20 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 import HeroSVG from "@/assets/undraw_building_websites_i78t.svg";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { Button } from "@/components/ui/button";
 
 const Home = () => {
   return (
-    <div className="">
-      <nav className="fixed top-0 flex w-full items-center justify-between  bg-neutral-200 p-5 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-400">
-        <p className="text-sm">ryelbanfield.me</p>
-
-        <ThemeSwitcher />
-      </nav>
-
-      <main className="mt-20">
-        <div className="flex flex-col gap-5 p-5">
+    <>
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 100 }}
+        transition={{ duration: 0.5, delay: 0.75 }}
+      >
+        <div className="flex flex-col gap-5 p-4">
           <h1 className="text-2xl font-bold uppercase">
             Building <br /> high-performance <br /> web applications
           </h1>
@@ -29,10 +27,16 @@ const Home = () => {
             <p className="text-xs uppercase">Let&apos;s start building yours</p>
           </Button>
 
-          <Image src={HeroSVG} alt="" className="py-10" />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 100 }}
+            transition={{ duration: 0.5, delay: 1.25 }}
+          >
+            <Image src={HeroSVG} alt="" className="py-5" />
+          </motion.div>
         </div>
-      </main>
-    </div>
+      </motion.main>
+    </>
   );
 };
 
