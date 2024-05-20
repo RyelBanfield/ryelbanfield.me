@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import Navbar from "@/components/Navbar";
 import ThemeProvider from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,6 +25,7 @@ const RootLayout = ({
         className={`${inter.className} bg-neutral-200 text-neutral-800 antialiased dark:bg-neutral-950 dark:text-neutral-400`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
