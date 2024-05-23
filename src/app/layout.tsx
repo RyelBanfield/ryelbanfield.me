@@ -1,12 +1,10 @@
 import "./globals.css";
 
+import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
 import Navbar from "@/components/Navbar";
 import ThemeProvider from "@/components/theme-provider";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ryel Banfield - Full Stack Web Developer",
@@ -22,7 +20,7 @@ const RootLayout = ({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} bg-neutral-200 text-neutral-800 antialiased dark:bg-neutral-950 dark:text-neutral-400`}
+        className={`${GeistSans.className} flex flex-col gap-10 bg-neutral-200 p-5 text-neutral-800 antialiased dark:bg-neutral-950 dark:text-neutral-400`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Navbar />
