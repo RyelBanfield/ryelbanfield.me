@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import SVG from "@/assets/undraw_building_websites_i78t.svg";
 
@@ -17,8 +18,8 @@ const Hero = () => {
         Hi, I&apos;m Ryel - I build innovative digital solutions on the web.
       </p>
 
-      <Button size={"sm"} className="w-44">
-        Learn more
+      <Button size={"sm"} asChild className="w-44">
+        <Link href={"/contact"}>Let&apos;s build together</Link>
       </Button>
     </div>
   );
