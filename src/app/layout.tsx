@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { Analytics } from "@vercel/analytics/react";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 
@@ -21,6 +22,7 @@ const RootLayout = ({
       <body className={`${GeistSans.className}`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
