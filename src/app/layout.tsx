@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import ThemeProvider from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Ryel Banfield - Full Stack Web Developer",
+  title: "Ryel Banfield - Full Stack Developer",
   description:
     "Crafting high-performance websites for a seamless digital experience.",
 };

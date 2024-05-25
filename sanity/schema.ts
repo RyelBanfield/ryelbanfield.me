@@ -3,8 +3,8 @@ import { type SchemaTypeDefinition } from "sanity";
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     {
-      name: "projects",
-      title: "Projects",
+      name: "project",
+      title: "Project",
       type: "document",
       fields: [
         {
@@ -40,7 +40,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
       ],
     },
     {
-      name: "blogPosts",
+      name: "blogPost",
       type: "document",
       fields: [
         {
@@ -66,7 +66,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
           title: "Slug",
           type: "slug",
           options: {
-            source: "projectName",
+            source: "title",
             slugify: (input) =>
               input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
             isUnique: (value, context) =>
