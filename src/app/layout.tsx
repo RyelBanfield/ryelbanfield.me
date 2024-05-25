@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 
-import ThemeProvider from "@/components/theme-provider";
+// import ThemeProvider from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "Ryel Banfield - Full Stack Developer",
@@ -20,10 +20,10 @@ const RootLayout = ({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${GeistSans.className}`}>
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          {children}
-          <Analytics />
-        </ThemeProvider>
+        {/* <ThemeProvider attribute="class" defaultTheme="dark"> */}
+        {children}
+        <Analytics />
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );
