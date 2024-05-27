@@ -29,8 +29,6 @@ const icons = [
   });
 });
 
-console.log(icons);
-
 const Home = () => {
   return (
     <main>
@@ -48,7 +46,7 @@ const Home = () => {
         <PhotoGrid />
       </div>
 
-      <div className="flex flex-col gap-6 py-12">
+      <div className="flex flex-col gap-6 py-6">
         <h2 className="text-center text-2xl font-semibold tracking-tighter">
           I work with different tools...
         </h2>
@@ -76,20 +74,19 @@ const Home = () => {
         />
       </div>
 
-      <div className="flex flex-col gap-6 py-12">
+      <div className="flex flex-col gap-6 py-6">
         <h3 className="text-center text-xl font-semibold tracking-tighter">
           But I focus on...
         </h3>
 
-        <div className="relative flex h-[500px] w-full max-w-[32rem] items-center justify-center overflow-hidden rounded-lg bg-background">
-          <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center  font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-            Next.js using <br /> TypeScript <br />
-            & TailwindCSS <br />
+        <div className="relative flex h-[320px] w-full max-w-[32rem] items-center justify-center overflow-hidden rounded-lg bg-background">
+          <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+            just a few..
           </span>
 
           {/* Inner Circles */}
           <OrbitingCircles
-            className="h-[30px] w-[30px] border-none bg-transparent"
+            className="h-[20px] w-[20px] border-none bg-transparent"
             duration={20}
             delay={10}
             radius={80}
@@ -98,7 +95,7 @@ const Home = () => {
           </OrbitingCircles>
 
           <OrbitingCircles
-            className="h-[30px] w-[30px] border-none bg-transparent"
+            className="h-[20px] w-[20px] border-none bg-transparent"
             duration={20}
             delay={18}
             radius={80}
@@ -107,7 +104,7 @@ const Home = () => {
           </OrbitingCircles>
 
           <OrbitingCircles
-            className="h-[30px] w-[30px] border-none bg-transparent"
+            className="h-[20px] w-[20px] border-none bg-transparent"
             duration={20}
             delay={24}
             radius={80}
@@ -117,17 +114,17 @@ const Home = () => {
 
           {/* Outer Circles (reverse) */}
           <OrbitingCircles
-            className="h-[50px] w-[50px] border-none bg-transparent"
+            className="h-[28px] w-[28px] border-none bg-transparent"
             reverse
-            radius={190}
+            radius={120}
             duration={20}
           >
             {icons[3]}
           </OrbitingCircles>
           <OrbitingCircles
-            className="h-[50px] w-[50px] border-none bg-transparent"
+            className="h-[28px] w-[28px] border-none bg-transparent"
             reverse
-            radius={190}
+            radius={120}
             duration={20}
             delay={20}
           >
