@@ -91,7 +91,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-5">
+    <div className="flex grow flex-col items-center gap-5 py-9">
       <Image src={SVG} alt="" className="mb-5 min-h-40 w-48" />
 
       <h1 className="text-center text-2xl font-semibold leading-none tracking-tighter">

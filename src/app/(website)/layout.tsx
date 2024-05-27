@@ -1,4 +1,5 @@
-import Navbar from "@/components/Navbar";
+import Link from "next/link";
+
 import { Toaster } from "@/components/ui/toaster";
 
 const WebsiteLayout = ({
@@ -7,9 +8,20 @@ const WebsiteLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <div className="flex min-h-screen flex-col gap-10 p-5 antialiased">
-      <Navbar />
+    <div className="mx-auto flex min-h-screen max-w-xl flex-col px-6 py-12 antialiased">
+      <nav className="space-x-3">
+        <Link href={"/"}>Home</Link>
+        <Link href={"/work"}>Work</Link>
+        <Link href={"/blog"}>Blog</Link>
+        <Link href={"/contact"}>Contact</Link>
+      </nav>
+
       {children}
+
+      <footer>
+        <p className="text-center text-xs">&copy; 2024 RCB Software LLC</p>
+      </footer>
+
       <Toaster />
     </div>
   );
