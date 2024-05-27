@@ -27,7 +27,7 @@ const PhotoGrid = () => {
       <Carousel
         plugins={[
           Autoplay({
-            delay: 5300,
+            delay: 5000,
           }),
         ]}
         opts={{
