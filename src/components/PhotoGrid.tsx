@@ -42,24 +42,32 @@ const PhotoGrid = () => {
                 alt=""
                 className="col-span-1 h-80 w-full rounded object-cover"
                 placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
                 src={Image_2}
                 alt=""
                 className="col-span-2 h-80 w-full rounded object-cover"
                 placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
                 src={Image_3}
                 alt=""
                 className="col-span-2 h-80 w-full rounded object-cover"
                 placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
                 src={Image_4}
                 alt=""
                 className="col-span-1 h-80 w-full rounded object-cover"
                 placeholder="blur"
+                width={500}
+                height={500}
               />
             </div>
           </CarouselItem>
@@ -71,24 +79,32 @@ const PhotoGrid = () => {
                 alt=""
                 className="row-span-1 h-full w-full rounded object-cover"
                 placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
                 src={Image_6}
                 alt=""
                 className="row-span-1 h-full w-full rounded object-cover"
                 placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
                 src={Image_7}
                 alt=""
                 className="row-span-1 h-full w-full rounded object-cover"
                 placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
                 src={Image_8}
                 alt=""
                 className="row-span-1 h-full w-full rounded object-cover"
                 placeholder="blur"
+                width={500}
+                height={500}
               />
             </div>
           </CarouselItem>
@@ -100,24 +116,32 @@ const PhotoGrid = () => {
                 alt=""
                 className="col-span-2 row-span-2 h-full w-full rounded object-cover"
                 placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
                 src={Image_10}
                 alt=""
                 className="col-span-2 row-span-1 h-full w-full rounded object-cover"
                 placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
                 src={Image_11}
                 alt=""
                 className="col-span-2 row-span-3 h-full w-full rounded object-cover"
                 placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
                 src={Image_12}
                 alt=""
                 className="col-span-2 row-span-2 h-full w-full rounded object-cover"
                 placeholder="blur"
+                width={500}
+                height={500}
               />
             </div>
           </CarouselItem>
