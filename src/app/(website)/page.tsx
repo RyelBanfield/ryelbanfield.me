@@ -1,14 +1,35 @@
-// import Image from "next/image";
+"use client";
 
-// import Link from "next/link";
+import { renderSimpleIcon } from "react-icon-cloud";
+import {
+  siGithub,
+  siNextdotjs,
+  siTailwindcss,
+  siTypescript,
+  siVercel,
+} from "simple-icons";
+
+import IconCloud from "@/components/magicui/icon-cloud";
+import OrbitingCircles from "@/components/magicui/orbiting-circles";
 import PhotoGrid from "@/components/PhotoGrid";
 
-// import { Button } from "@/components/ui/button";
-// import GithubSVG from "../../../public/github.svg";
-// import NextSVG from "../../../public/next.svg";
-// import SanitySVG from "../../../public/sanity.svg";
-// import TailwindSVG from "../../../public/tailwindcss.svg";
-// import VercelSVG from "../../../public/vercel.svg";
+const icons = [
+  siTypescript,
+  siNextdotjs,
+  siTailwindcss,
+  siGithub,
+  siVercel,
+].map((icon) => {
+  return renderSimpleIcon({
+    icon,
+    size: 42,
+    aProps: {
+      onClick: (e: any) => e.preventDefault(),
+    },
+  });
+});
+
+console.log(icons);
 
 const Home = () => {
   return (
@@ -25,63 +46,95 @@ const Home = () => {
         </p>
 
         <PhotoGrid />
-
-        {/* <Button size={"sm"} asChild className="w-44">
-          <Link href={"/contact"}>Let&apos;s build together</Link>
-        </Button> */}
-
-        {/* <p className="leading-tight">
-          Hi, I&apos;m Ryel - I&apos;m a fullstack developer, chess player and
-          amateur photographer. I am currently focused on frontend development,
-          growing my design skills, and networking.
-        </p> */}
       </div>
 
-      {/* <div className="py-9">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-lg font-semibold leading-8 text-gray-900">
-            Proficient with the world&apos;s most modern tools
-          </h2>
+      <div className="flex flex-col gap-6 py-12">
+        <h2 className="text-center text-2xl font-semibold tracking-tighter">
+          I work with different tools...
+        </h2>
+        <IconCloud
+          iconSlugs={[
+            "typescript",
+            "javascript",
+            "react",
+            "html5",
+            "css3",
+            "nodedotjs",
+            "express",
+            "nextdotjs",
+            "prisma",
+            "amazonaws",
+            "postgresql",
+            "firebase",
+            "vercel",
+            "docker",
+            "git",
+            "github",
+            "visualstudiocode",
+            "figma",
+          ]}
+        />
+      </div>
 
-          <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10">
-            <Image
-              className="col-span-2 max-h-9"
-              src={NextSVG}
-              alt="Next.js"
-              width={158}
-              height={48}
-            />
-            <Image
-              className="col-span-2 max-h-9"
-              src={TailwindSVG}
-              alt="TailwindCSS"
-              width={158}
-              height={48}
-            />
-            <Image
-              className="col-span-2 max-h-9"
-              src={SanitySVG}
-              alt="Sanity"
-              width={158}
-              height={48}
-            />
-            <Image
-              className="col-span-2 max-h-9"
-              src={GithubSVG}
-              alt="Github"
-              width={158}
-              height={48}
-            />
-            <Image
-              className="col-span-2 col-start-2 max-h-9"
-              src={VercelSVG}
-              alt="Vercel"
-              width={158}
-              height={48}
-            />
-          </div>
+      <div className="flex flex-col gap-6 py-12">
+        <h3 className="text-center text-xl font-semibold tracking-tighter">
+          But I focus on...
+        </h3>
+
+        <div className="relative flex h-[500px] w-full max-w-[32rem] items-center justify-center overflow-hidden rounded-lg bg-background">
+          <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center  font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+            Next.js using <br /> TypeScript <br />
+            & TailwindCSS <br />
+          </span>
+
+          {/* Inner Circles */}
+          <OrbitingCircles
+            className="h-[30px] w-[30px] border-none bg-transparent"
+            duration={20}
+            delay={10}
+            radius={80}
+          >
+            {icons[0]}
+          </OrbitingCircles>
+
+          <OrbitingCircles
+            className="h-[30px] w-[30px] border-none bg-transparent"
+            duration={20}
+            delay={18}
+            radius={80}
+          >
+            {icons[1]}
+          </OrbitingCircles>
+
+          <OrbitingCircles
+            className="h-[30px] w-[30px] border-none bg-transparent"
+            duration={20}
+            delay={24}
+            radius={80}
+          >
+            {icons[2]}
+          </OrbitingCircles>
+
+          {/* Outer Circles (reverse) */}
+          <OrbitingCircles
+            className="h-[50px] w-[50px] border-none bg-transparent"
+            reverse
+            radius={190}
+            duration={20}
+          >
+            {icons[3]}
+          </OrbitingCircles>
+          <OrbitingCircles
+            className="h-[50px] w-[50px] border-none bg-transparent"
+            reverse
+            radius={190}
+            duration={20}
+            delay={20}
+          >
+            {icons[4]}
+          </OrbitingCircles>
         </div>
-      </div> */}
+      </div>
     </main>
   );
 };
