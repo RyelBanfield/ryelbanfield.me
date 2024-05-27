@@ -9,18 +9,18 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-import Image_1 from "../../public/photos/1.jpg";
-import Image_2 from "../../public/photos/2.jpg";
-import Image_3 from "../../public/photos/3.jpg";
-import Image_4 from "../../public/photos/4.jpg";
-import Image_5 from "../../public/photos/5.jpg";
-import Image_6 from "../../public/photos/6.jpg";
-import Image_7 from "../../public/photos/7.jpg";
-import Image_8 from "../../public/photos/8.jpg";
-import Image_9 from "../../public/photos/9.jpg";
-import Image_10 from "../../public/photos/10.jpg";
-import Image_11 from "../../public/photos/11.jpg";
-import Image_12 from "../../public/photos/12.jpg";
+// import Image_1 from "../../public/photos/1.JPG";
+// import Image_2 from "../../public/photos/2.JPG";
+// import Image_3 from "../../public/photos/3.JPG";
+// import Image_4 from "../../public/photos/4.JPG";
+// import Image_5 from "../../public/photos/5.JPG";
+// import Image_6 from "../../public/photos/6.JPG";
+// import Image_7 from "../../public/photos/7.JPG";
+// import Image_8 from "../../public/photos/8.JPG";
+// import Image_9 from "../../public/photos/9.JPG";
+// import Image_10 from "../../public/photos/10.JPG";
+// import Image_11 from "../../public/photos/11.JPG";
+// import Image_12 from "../../public/photos/12.JPG";
 
 const PhotoGrid = () => {
   return (
@@ -39,28 +39,32 @@ const PhotoGrid = () => {
           <CarouselItem>
             <div className="grid grid-cols-3 gap-3">
               <Image
-                src={Image_1}
+                src={"/photos/1.JPG"}
                 alt=""
                 className="col-span-1 h-80 w-full rounded object-cover"
-                placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
-                src={Image_2}
+                src={"/photos/2.JPG"}
                 alt=""
                 className="col-span-2 h-80 w-full rounded object-cover"
-                placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
-                src={Image_3}
+                src={"/photos/3.JPG"}
                 alt=""
                 className="col-span-2 h-80 w-full rounded object-cover"
-                placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
-                src={Image_4}
+                src={"/photos/4.JPG"}
                 alt=""
                 className="col-span-1 h-80 w-full rounded object-cover"
-                placeholder="blur"
+                width={500}
+                height={500}
               />
             </div>
           </CarouselItem>
@@ -68,28 +72,32 @@ const PhotoGrid = () => {
           <CarouselItem>
             <div className="grid h-[652px] grid-rows-4 gap-3">
               <Image
-                src={Image_5}
+                src={"/photos/5.JPG"}
                 alt=""
                 className="row-span-1 h-full w-full rounded object-cover"
-                placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
-                src={Image_6}
+                src={"/photos/6.JPG"}
                 alt=""
                 className="row-span-1 h-full w-full rounded object-cover"
-                placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
-                src={Image_7}
+                src={"/photos/7.JPG"}
                 alt=""
                 className="row-span-1 h-full w-full rounded object-cover"
-                placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
-                src={Image_8}
+                src={"/photos/8.JPG"}
                 alt=""
                 className="row-span-1 h-full w-full rounded object-cover"
-                placeholder="blur"
+                width={500}
+                height={500}
               />
             </div>
           </CarouselItem>
@@ -97,28 +105,32 @@ const PhotoGrid = () => {
           <CarouselItem>
             <div className="grid h-[652px] grid-cols-4 grid-rows-4 gap-3">
               <Image
-                src={Image_12}
+                src={"/photos/9.JPG"}
                 alt=""
                 className="col-span-2 row-span-2 h-full w-full rounded object-cover"
-                placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
-                src={Image_10}
+                src={"/photos/10.JPG"}
                 alt=""
                 className="col-span-2 row-span-1 h-full w-full rounded object-cover"
-                placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
-                src={Image_9}
+                src={"/photos/11.JPG"}
                 alt=""
                 className="col-span-2 row-span-1 h-full w-full rounded object-cover"
-                placeholder="blur"
+                width={500}
+                height={500}
               />
               <Image
-                src={Image_11}
+                src={"/photos/12.JPG"}
                 alt=""
                 className="col-span-4 row-span-2 h-full w-full rounded object-cover"
-                placeholder="blur"
+                width={500}
+                height={500}
               />
             </div>
           </CarouselItem>
