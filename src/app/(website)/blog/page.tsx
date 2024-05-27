@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import SVG from "@/assets/undraw_typewriter_re_u9i2.svg";
+import SVG from "@/assets/illustrations/undraw_typewriter_re_u9i2.svg";
 
 // import { urlFor } from "@/lib/utils";
 

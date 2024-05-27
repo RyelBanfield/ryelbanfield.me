@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import SVG from "@/assets/undraw_personal_text_re_vqj3.svg";
+import SVG from "@/assets/illustrations/undraw_personal_text_re_vqj3.svg";
 import { Button } from "@/components/ui/button";
 import {
   Form,
