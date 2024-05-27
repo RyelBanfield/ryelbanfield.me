@@ -9,19 +9,6 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-// import Image_1 from "../../public/photos/1.JPG";
-// import Image_2 from "../../public/photos/2.JPG";
-// import Image_3 from "../../public/photos/3.JPG";
-// import Image_4 from "../../public/photos/4.JPG";
-// import Image_5 from "../../public/photos/5.JPG";
-// import Image_6 from "../../public/photos/6.JPG";
-// import Image_7 from "../../public/photos/7.JPG";
-// import Image_8 from "../../public/photos/8.JPG";
-// import Image_9 from "../../public/photos/9.JPG";
-// import Image_10 from "../../public/photos/10.JPG";
-// import Image_11 from "../../public/photos/11.JPG";
-// import Image_12 from "../../public/photos/12.JPG";
-
 const PhotoGrid = () => {
   return (
     <div className="max-w-full">
