@@ -2,22 +2,7 @@ import Image from "next/image";
 
 import SVG from "@/assets/illustrations/undraw_typewriter_re_u9i2.svg";
 
-// import { urlFor } from "@/lib/utils";
-
-// import { BlogPost } from "../../../../sanity.types";
-// import { client } from "../../../../sanity/lib/client";
-
 const Blog = () => {
-  // const blogPosts = await client.fetch<BlogPost[]>(
-  //   `*[_type == "blogPost"]`,
-  //   {},
-  //   {
-  //     next: {
-  //       revalidate: 0,
-  //     },
-  //   },
-  // );
-
   return (
     <div className="flex grow flex-col items-center gap-5 py-9">
       <Image src={SVG} alt="" className="mb-5 min-h-40 w-48" />

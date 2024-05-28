@@ -2,22 +2,7 @@ import Image from "next/image";
 
 import SVG from "@/assets/illustrations/undraw_feeling_proud_qne1.svg";
 
-// import { urlFor } from "@/lib/utils";
-
-// import { Project } from "../../../../sanity.types";
-// import { client } from "../../../../sanity/lib/client";
-
 const Work = () => {
-  // const projects = await client.fetch<Project[]>(
-  //   `*[_type == "project"]`,
-  //   {},
-  //   {
-  //     next: {
-  //       revalidate: 0,
-  //     },
-  //   },
-  // );
-
   return (
     <div className="flex grow flex-col items-center gap-5 py-9">
       <Image src={SVG} alt="" className="mb-5 min-h-40 w-40" />

@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import SquigglyUnderlineNav from "@/components/SquigglyUnderlineNav";
 import { Toaster } from "@/components/ui/toaster";
 
 const WebsiteLayout = ({
@@ -9,12 +8,7 @@ const WebsiteLayout = ({
 }>) => {
   return (
     <div className="mx-auto flex min-h-screen max-w-[500px] flex-col px-6 py-12 antialiased">
-      <nav className="space-x-3">
-        <Link href={"/"}>Home</Link>
-        <Link href={"/work"}>Work</Link>
-        <Link href={"/blog"}>Blog</Link>
-        <Link href={"/contact"}>Contact</Link>
-      </nav>
+      <SquigglyUnderlineNav />
 
       {children}
 
