@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -12,12 +13,17 @@ const navigation = [
 ];
 
 const SquigglyUnderlineNav = () => {
-  const [selectedLink, setSelectedLink] = useState("Home");
+  const pathname = usePathname();
+  const [selectedLink, setSelectedLink] = useState(pathname);
+
+  useEffect(() => {
+    setSelectedLink(pathname);
+  }, [pathname]);
 
   return (
     <div className="flex gap-6">
       {navigation.map((item) => {
-        const isSelected = item.name === selectedLink;
+        const isSelected = item.href === selectedLink;
         return (
           <Link
             key={item.name}
@@ -25,7 +31,6 @@ const SquigglyUnderlineNav = () => {
             className={`relative text-sm leading-6 no-underline ${
               isSelected ? "font-semibold" : "opacity-75"
             }`}
-            onClick={() => setSelectedLink(item.name)}
           >
             {item.name}
             {isSelected ? (
