@@ -1,12 +1,13 @@
 import Link from "next/link";
 
+import Main from "@/components/Main";
 import OrbitingLogos from "@/components/OrbitingLogos";
 import PhotoGrid from "@/components/PhotoGrid";
 
 const Home = () => {
   return (
-    <main className="mb-32">
-      <div className="flex flex-col gap-6 pt-12">
+    <Main>
+      <section className="flex flex-col gap-6">
         <h1 className="text-3xl font-semibold leading-none tracking-tighter">
           Ryel Banfield. <br /> Web Developer.
         </h1>
@@ -18,11 +19,11 @@ const Home = () => {
         </p>
 
         <PhotoGrid />
-      </div>
+      </section>
 
       <OrbitingLogos />
 
-      <div>
+      <section>
         <p className="text-center text-2xl font-semibold leading-none tracking-tighter">
           Feel free to read more <br /> about my{" "}
           <Link href="/work" className="underline">
@@ -34,8 +35,8 @@ const Home = () => {
           </Link>
           .
         </p>
-      </div>
-    </main>
+      </section>
+    </Main>
   );
 };
 
