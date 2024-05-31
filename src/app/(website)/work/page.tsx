@@ -1,3 +1,4 @@
+import ContactButton from "@/components/ContactButton";
 import Main from "@/components/Main";
 
 const Work = () => {
@@ -17,7 +18,7 @@ const Work = () => {
         <hr />
 
         <h2>RCB Software</h2>
-        <p>Freelance Web Developer (01/2023 — Present)</p>
+        <p>Freelance Web Developer (2023 — Present)</p>
 
         <p>
           At RCB Software, I collaborate with clients to elevate their digital
@@ -48,7 +49,7 @@ const Work = () => {
         <hr />
 
         <h2>Contract Work</h2>
-        <p>Full Stack Developer (10/2021 — 01/2023)</p>
+        <p>Full Stack Developer (2021 — 2023)</p>
 
         <p>
           In my previous role as a contracted Full Stack Developer, I focused on
@@ -94,6 +95,10 @@ const Work = () => {
           my ability to build and manage software solutions independently.
         </p>
       </section>
+
+      <br />
+
+      <ContactButton />
     </Main>
   );
 };
