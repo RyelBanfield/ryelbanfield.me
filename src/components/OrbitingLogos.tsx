@@ -30,10 +30,9 @@ const icons = [
 const OrbitingLogos = () => {
   return (
     <>
-      <div className="relative flex h-[420px] w-full max-w-[32rem] items-center justify-center overflow-hidden rounded-lg bg-background py-12 min-[500px]:hidden">
-        <span className="pointer-events-none z-50 whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-xs font-semibold leading-none text-transparent">
-          As a developer,
-          <br /> I focus on a few tools.
+      <div className="relative mb-12 flex h-80 w-full max-w-[32rem] items-center justify-center overflow-hidden rounded-lg bg-background min-[500px]:hidden">
+        <span className="pointer-events-none z-50 whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-lg font-semibold leading-none text-transparent">
+          As a developer
         </span>
 
         {/* Inner Circles */}
@@ -84,10 +83,9 @@ const OrbitingLogos = () => {
         </OrbitingCircles>
       </div>
 
-      <div className="relative hidden h-[600px] w-full max-w-[32rem] items-center justify-center overflow-hidden rounded-lg bg-background py-12 min-[500px]:flex">
-        <span className="pointer-events-none z-50 whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-lg font-semibold leading-none text-transparent">
-          As a developer,
-          <br /> I focus on a few tools.
+      <div className="relative mb-12 hidden h-[500px] w-full max-w-[32rem] items-center justify-center overflow-hidden rounded-lg bg-background min-[500px]:flex">
+        <span className="pointer-events-none z-50 whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-2xl font-semibold leading-none text-transparent">
+          As a developer
         </span>
 
         {/* Inner Circles */}
